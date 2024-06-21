@@ -1,0 +1,14 @@
+#error-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #161616;
+    font-family: 'Roboto', sans-serif;
+}   
+
+#error-page h1, #error-page p{
+    margin-bottom: 10px;
+    color: #fff;
+}

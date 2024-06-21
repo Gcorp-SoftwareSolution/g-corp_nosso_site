@@ -12,12 +12,13 @@ import {
 
 import MainPage from './routes/MainPage.jsx';
 import ContactsPage from './routes/ContactsPage.jsx';
+import ErrorPage from './routes/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
