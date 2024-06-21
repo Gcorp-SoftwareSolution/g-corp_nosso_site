@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Landing from "../Landing";
 import Blogs from "../Blogs";
 import ECommerce from "../ECommerce";
@@ -10,6 +10,8 @@ const ServicesPage = () => {
     const [selectedComponent, setSelectedComponent] = useState("servicos");
     const [loading, setLoading] = useState(false);
 
+    const components = ["servicos", "blog", "ecommerce", "institutional"];
+
     const handleButtonClick = (component) => {
         setLoading(true);
         setTimeout(() => {
@@ -17,6 +19,22 @@ const ServicesPage = () => {
             setLoading(false);
         }, 300); // 300 milissegundos de atraso
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setLoading(true);
+            setTimeout(() => {
+                setSelectedComponent(prev => {
+                    const currentIndex = components.indexOf(prev);
+                    const nextIndex = (currentIndex + 1) % components.length;
+                    return components[nextIndex];
+                });
+                setLoading(false);
+            }, 400);
+        }, 8000);
+
+        return () => clearInterval(interval); // Limpa o intervalo quando o componente for desmontado
+    }, []);
 
     return (
         <div className="services-main-container" id="service-section">
