@@ -8,7 +8,16 @@
     font-family: 'Roboto', sans-serif;
 }   
 
-#error-page h1, #error-page p{
+#error-page p{
     margin-bottom: 10px;
     color: #fff;
+}
+
+#error-page h1{
+    margin-bottom: 10px;
+    color: #006cbe;
+}
+
+#error-page img{
+    margin-bottom: 10px;
 }
